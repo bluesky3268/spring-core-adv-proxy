@@ -1,10 +1,8 @@
-package hello.proxy.app.v2;
+package hello.proxy.app.v3;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * 예제의 3가지 상황
@@ -14,26 +12,24 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 
 @Slf4j
-@RequestMapping
-@ResponseBody
-public class OrderControllerV2 {
+@RestController
+public class OrderControllerV3 {
 
-    private final OrderServiceV2 orderService;
+    private final OrderServiceV3 orderService;
 
-    public OrderControllerV2(OrderServiceV2 orderService) {
-        this.orderService = orderService;
+    public OrderControllerV3(OrderServiceV3 orderService) {
+        this.orderService =orderService;
     }
 
-    @GetMapping("/v2/request")
+    @GetMapping("/v3/request")
     public String request(String itemId) {
-        log.info("V2 - itemId : {}", itemId);
+        log.info("V3 - itemId : {}", itemId);
         orderService.orderItem(itemId);
         return "OK";
     }
 
-    @GetMapping("/v2/no-log")
+    @GetMapping("/v3/no-log")
     public String nolog() {
         return "NO LOG OK";
     }
-
 }
