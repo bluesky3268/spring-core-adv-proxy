@@ -23,6 +23,10 @@ public class ProxyPatternTest {
      *
      * 프록시 패턴의 핵심은
      * ProxyPatternClient와 RealSubject의 코드를 전혀 수정하지 않고 프록시를 도입해서 접근 제어를 한다는 점이다.
+     * 
+     * 프록시를 통해서 할 수 있는 기능 
+     * - 접근 제어 
+     * - 부가 기능 추가
      */
     @Test
     void cacheProxyTest() {
