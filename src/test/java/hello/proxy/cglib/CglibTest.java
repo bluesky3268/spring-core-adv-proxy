@@ -13,8 +13,6 @@ public class CglibTest {
     void cglibTest() {
         /**
          * 인터페이스가 없는데 동적 프록시를 만들 수 있을까 -> CGLIB를 이용해서 가능함
-         * 근데 스프링에서는 굳이 CGLIB를 쓸 필요없이 프록시 팩토리라는 걸 쓰면 됨
-         *
          */
         ConcreteService target = new ConcreteService();
 
